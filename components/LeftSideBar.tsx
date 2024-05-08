@@ -10,10 +10,10 @@ const LeftSideBar = () => {
  const {data:session}=useSession()
  const pathname = usePathname()
   return (
-    <section className='sticky left-0  top-0 mt-0 flex h-screen flex-col justify-between overflow-y-auto border-r border-black bg-amber-700 p-6 pt-36 max-sm:hidden lg:w-[266px] dark:shadow-none'>
+    <section className='sticky left-0  top-0 mt-0 flex h-screen flex-col justify-between overflow-y-auto border-r border-amber-500  bg-gradient-to-b from-yellow-100 via-amber-400 to-amber-300 p-6 pt-36 max-sm:hidden lg:w-[266px] dark:shadow-none'>
         <div className='mt-[-100px] flex flex-col gap-6'>
         {sidebarLinks.map((link)=>(
-        <div key={link.label} className=' '>
+        <div key={link.label} className=''>
             <Link className={`${pathname === link.route ? 'flex w-full flex-row rounded-full bg-orange-500 p-2' : 'flex w-full flex-row rounded-full bg-none p-2'}`} href={link.route} >
                
                 <Image src={link.imgURL} className='' alt='image' width={24} height={24}/>
@@ -25,6 +25,7 @@ const LeftSideBar = () => {
       {
         session && session.user? (
         <div className='flex'>
+      {session.user?.email==="yekoyeadmas@gmail.com" && <Link className='btn btn-primary' href="/admin">Admin</Link>}
         <Link className='btn btn-primary' href="/api/auth/signout">
             signout
         </Link>
@@ -35,6 +36,7 @@ const LeftSideBar = () => {
         </Link>
         )
       }
+
         </div>
     </section>
   )

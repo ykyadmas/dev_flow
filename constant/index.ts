@@ -14,35 +14,25 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/users.svg",
-    route: "/community",
-    label: "Community",
+    route: "/fileUpload",
+    label: "Files",
   },
   {
     imgURL: "/assets/icons/star.svg",
-    route: "/collection",
-    label: "Collections",
+    route: "/contact",
+    label: "Contacts",
   },
-  {
-    imgURL: "/assets/icons/suitcase.svg",
-    route: "/jobs",
-    label: "Find Jobs",
-  },
-  {
-    imgURL: "/assets/icons/tag.svg",
-    route: "/tags",
-    label: "Tags",
-  },
-  {
-    imgURL: "/assets/icons/user.svg",
-    route: "/profile",
-    label: "Profile",
-  },
+ 
+ 
   {
     imgURL: "/assets/icons/question.svg",
     route: "/ask-question",
     label: "Ask a question",
   },
 ];
+
+
+
 
 export const BADGE_CRITERIA = {
   QUESTION_COUNT: {
