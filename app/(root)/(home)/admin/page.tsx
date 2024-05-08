@@ -23,10 +23,9 @@ const AdminSideBarLink = () => {
   const { data: session } = useSession();
   const pathname = usePathname();
 
-  if (!session?.user?.email || session.user.email !== 'yekoyeadmas@gmail.com') {
+  if (!session?.user?.email || session.user.email !=='yekoyeadmas@gmail.com' ) {
     return <p>You are not an admin</p>;
   }
-
   return (
     <div>
       {adminLink.map((link) => (

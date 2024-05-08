@@ -36,7 +36,7 @@ const displayMessage=await prisma.contact.findMany({
    <td>{message.sender?.email}</td>
    <td>{message.messsage}</td>
  </tr>
- {/* row 3 */}
+ 
 
 </tbody>
 ))}
