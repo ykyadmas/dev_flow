@@ -28,6 +28,7 @@ const handleDelete=()=>{
     <div>
         {session?.user?.name ?(
           <button 
+          className='btn btn-secondary'
           onClick={handleDelete}>{isDeleting ? "Deleting... " : "Delete"}</button>
         ):(
           <button></button>

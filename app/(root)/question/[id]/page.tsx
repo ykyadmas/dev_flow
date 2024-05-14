@@ -34,8 +34,9 @@ const Page = async ({params}:Props) => {
       <p className="py-6">{displayPrisma.content}</p>
       <p className="m-auto flex justify-end font-bold text-gray-800">asked by <span className=" ml-4 text-amber-950">{displayPrisma.author.name}</span></p>
       <p className="m-auto flex justify-end font-bold text-gray-800">{getTimestamp(displayPrisma.createdAt)}</p>
+     <div className="flex flex-row justify-end"> 
       <EditButton QuestionId={displayPrisma.id}/>
-      <DeleteButton QuestionId={displayPrisma.id}/>
+      <DeleteButton QuestionId={displayPrisma.id}/></div>
     </div>
     
   </div>

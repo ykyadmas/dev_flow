@@ -6,12 +6,7 @@ import { getTimestamp } from '@/lib/utils'
 interface Props{
     id:number,
     title:string,
-    tags:{_id:string,name:string}[],
-    author:{
-        id:string,
-        name:string,
-        picture:string
-    },
+    content:string,
     upvote:number,
     views:number,
     query:string,
@@ -20,7 +15,7 @@ interface Props{
     createdAt:Date
 }
 
-const DisplayCards = async({id,title,author,query,currentPage,createdAt}:Props) => {
+const DisplayCards = async({id,title,content,query,currentPage,createdAt}:Props) => {
 
   
   return (
@@ -29,20 +24,18 @@ const DisplayCards = async({id,title,author,query,currentPage,createdAt}:Props) 
        <div>
          <span 
         className='flex text-black'>
-        {author.name}
         </span>
         <span 
         className='flex text-black sm:hidden'>{getTimestamp(createdAt)}</span>
         <Link href={`question/${id}`}>
         <h1 className='flex-1 text-2xl font-bold text-black'>{title}</h1>
+        <h1 className='flex-1 text-xl text-gray-700'>{content}</h1>
         </Link>
        </div>
         </div>
         <div className='mt-3 flex flex-wrap gap-2'>
         </div>
         <div className='mt-6 flex w-full flex-wrap justify-between gap-3'>
-         
-       
         </div>
     </div>
   )

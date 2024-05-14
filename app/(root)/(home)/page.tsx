@@ -2,6 +2,7 @@ import DisplayCards from "@/components/common/DisplayCards";
 import ResultNotFound from "@/components/common/ResultNotFound";
 import LocalSearch from "@/components/search/LocalSearch";
 import { PrismaClient } from "@prisma/client";
+import { Metadata } from "next";
 import Link from "next/link";
 
 const prisma=new PrismaClient()
@@ -52,8 +53,8 @@ export default async function Home({searchParams}:{searchParams?:{
           id={question.id}
           key={question.id}
           title={question.title}
+          content={question.content}
           author={question.author.name}
-         
           createdAt={question.createdAt} 
           answers={[]}      
           query={query}
@@ -67,4 +68,9 @@ export default async function Home({searchParams}:{searchParams?:{
     </div>
      </>
   );
+}
+
+export const metadata:Metadata={
+  title:"All Questions Page",
+  description:"View All Questions And Click To Answer"
 }

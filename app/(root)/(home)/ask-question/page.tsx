@@ -1,4 +1,5 @@
 import QuestionForm from '@/components/forms/QuestionForm'
+import { Metadata } from 'next'
 import React from 'react'
 
 const page = () => {
@@ -12,4 +13,10 @@ const page = () => {
   )
 }
 
+export const metadata:Metadata={
+  title:"Ask any Question",
+  description:"View Ask Questions Page"
+}
+
 export default page
+

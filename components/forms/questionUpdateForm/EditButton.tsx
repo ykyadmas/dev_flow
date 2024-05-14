@@ -8,8 +8,7 @@ const EditButton = ({QuestionId}:{QuestionId:number}) => {
   return (
     <div>
    {session?.user?.name ? (
-     <Link href={`/question/${QuestionId}/editQuestion`} className='btn btn-success'>Edit</Link>
-
+     <Link  href={`/question/${QuestionId}/editQuestion`} className='btn btn-primary'>Edit</Link>
    ):(
     <button></button>
    )}
