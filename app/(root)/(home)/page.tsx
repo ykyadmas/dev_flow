@@ -12,7 +12,7 @@ export default async function Home({searchParams}:{searchParams?:{
   page?:number;
 }}) {
   const query=searchParams?.query || ""
-  const currentPage=Number(searchParams?.page) || 1
+  // const currentPage=Number(searchParams?.page) || 1
 
   const displayQuestion=await prisma.question.findMany({
     where:{

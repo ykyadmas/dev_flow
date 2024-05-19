@@ -34,17 +34,17 @@ import axios from 'axios';
         }))
   return (
     <div>
-       <form onSubmit={handleOnSubmit}>
+       <form onSubmit={handleOnSubmit} className='flex flex-col'>
        <input 
        {...register('title')}
        type="text" 
        placeholder="Write Title of the Posts" 
-       className="input input-ghost w-full max-w-xs"/>
+       className="input w-full max-w-xs"/>
         <textarea 
         {...register('detail')}
         className="textarea textarea-bordered" 
-        placeholder="Write Posts"></textarea>
-        <button type="submit">{isSubmitting ? "Posting..." : "Post"}</button>
+        placeholder="Write Post Details"></textarea>
+        <button className='btn btn-primary' type="submit">{isSubmitting ? "Posting..." : "Post"}</button>
        </form>
     </div>
   )

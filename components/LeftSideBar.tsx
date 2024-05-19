@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 
 const LeftSideBar = () => {
+ const admiEmail=process.env.NEXT_PUBLIC_ADMIN_EMAIL 
  const {data:session}=useSession()
  const pathname = usePathname()
   return (
@@ -24,8 +25,8 @@ const LeftSideBar = () => {
       }
       {
         session && session.user? (
-        <div className='flex'>
-      {session.user?.email==="yekoyeadmas@gmail.com" && <Link className='btn btn-primary' href="/admin">Admin</Link>}
+        <div className='flex flex-col'>
+      {session.user?.email===admiEmail && <Link className='btn btn-primary mb-2' href="/admin">Admin</Link>}
         <Link className='btn btn-primary' href="/api/auth/signout">
             signout
         </Link>

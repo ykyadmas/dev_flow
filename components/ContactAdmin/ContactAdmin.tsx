@@ -45,9 +45,16 @@ const QuestionForm= () => {
     
         {/* Other form elements */}
        {session && session.user ? (
+        <>
          <button 
          className='btn border-t-orange-500' 
-         type="submit">{isSubmitting ? "Submitting..." : "Submit"}</button>
+         type="submit">{isSubmitting ? "Submitting..." : "Submit"}
+         </button>
+         {/* <a href="mailto:yekoyeadmas@gmail.com"
+         >
+          Let&apos;s get in touch
+       </a> */}
+        </>
        ):(
          <Link className='btn btn-primary' href="/api/signin/">Signin</Link>
        )}

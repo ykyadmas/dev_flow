@@ -1,12 +1,23 @@
 import Cards from '@/components/fileDisplayCard/Cards'
+import LocalFileSearch from '@/components/search/LocalFileSearch'
 import { PrismaClient } from '@prisma/client'
 import Link from 'next/link'
 import React from 'react'
 
 const prisma=new PrismaClient()
 
-const file = async() => {
+const file = async({searchParams}:{searchParams?:{
+  query?:string;
+  page?:number;
+}}) => {
+const query=searchParams?.query || ""
 const display=await prisma.file.findMany({
+  where:{
+    OR: [
+      { title: { contains: query, mode: 'insensitive' } },
+      { content: { contains: query, mode: 'insensitive' } },
+    ],
+  },
 
   'orderBy':{
     'createdAt': 'desc'
@@ -18,6 +29,7 @@ const display=await prisma.file.findMany({
 })
   return (
     <div className=''>
+       <LocalFileSearch />
        <Link className='btn btn-primary' href='/fileUpload/create'>
        Uploadfile
       </Link>
